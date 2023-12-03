@@ -13,11 +13,24 @@ def askGPT(chat):
   for data in preds:
     print(data)
      
-    st.write(data)
+    with st.chat_message(name = "assistant"): 
+      st.markdown(data)
+
+    st.session_state.messages.append({"role": "assistant", "content": data})
     
-while True:    
-  chat = input("Masukkan Kalimat:")
-  if chat == 'exit':
-    break
-  askGPT(chat)
+while True:
+  if "messages" not in st.session_state:
+    st.session_state.messages = []
+
+  for message in st.session_state.messages:
+    with st.chat_message(message["role"]):
+        st.markdown(message["content"])
+            
+  prompt = st.chat_input("Say something")
+  if prompt:
+    with st.chat_message(name = "user"):
+      st.markdown(prompt) 
+
+    st.session_state.messages.append({"role": "user", "content": prompt})
+  askGPT(prompt)
   
