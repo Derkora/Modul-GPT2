@@ -88,3 +88,50 @@ Run Code dengan Streamlit
 ```bash
 streamlit run [namafile].py
 ```
+
+## Styling dengan Streamlit
+
+Streamlit memberikan kita beberapa cara atau komponen untuk menghandle web kita, beberapa komponen yang disediakan adalah:
+
+**Output**
+
+*Title*
+```py
+st.title("💬 IT-GPT")
+```
+
+*Caption*
+```py
+st.caption("My First GPT")
+```
+
+*Markdown*
+```py
+st.markdown("Saya tidak suka web")
+```
+
+**Input**
+
+*Text Input*
+```py
+st.text_input("Kamu siapanya aku?")
+```
+
+*Number Input*
+```py
+st.number_input("Insert Coin")
+```
+
+Untuk dokumentasi lebih lengkap bisa klik link <a href="https://docs.streamlit.io/library/api-reference">ini.</a>
+
+<a href="https://docs.streamlit.io/library/api-reference/session-state">**State Management**</a>
+
+Untuk menjaga web tetap berjalan bisa menggunakan built-in state management streamlit
+
+```py
+st.session_state
+```
+
+
+
+
